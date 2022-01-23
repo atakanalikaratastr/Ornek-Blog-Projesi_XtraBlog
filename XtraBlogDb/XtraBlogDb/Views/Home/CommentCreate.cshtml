@@ -1,0 +1,27 @@
+﻿
+    <form method="post" class="mb-5 tm-comment-form">
+        <h2 class="tm-color-primary tm-post-title mb-4">Your comment</h2>
+        <div class="mb-4">
+            <input class="form-control" name="BlogId" value="@ViewBag.deger" style="display:none" type="text">
+        </div>
+        <div class="mb-4">
+            Topic
+            <input class="form-control" name="Topic" type="text">
+        </div>
+        <div class="mb-4">
+            UserName
+            <input class="form-control" name="UserName" type="text">
+        </div>
+        <div class="mb-4">
+            Mail
+            <input class="form-control" name="Mail" type="text">
+        </div>
+        <div class="mb-4">
+            CommentText
+            <textarea class="form-control" name="CommentText" rows="6"></textarea>
+        </div>
+        <div class="text-right">
+            @*<button class="tm-btn tm-btn-primary tm-btn-small">Submit</button>*@
+            <input type="submit" value="Gönder" class="tm-btn tm-btn-primary tm-btn-small" />
+        </div>
+    </form>

@@ -1,0 +1,96 @@
+﻿@model PagedList.IPagedList<NTier.Entities.BlogDetailDTO>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@{
+    <!-- Search form -->
+    <div class="row tm-row">
+        <div class="col-12">
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+            {
+                <input class="form-control tm-search-input" name="searchText" type="text" placeholder="Ara..." aria-label="Search">
+                <button class="tm-search-button" type="submit">
+                    <i class="fas fa-search tm-search-icon" aria-hidden="true"></i>
+                </button>
+            }
+        </div>
+    </div>
+    <div class="row tm-row">
+        @foreach (var item in Model)
+        {
+            if (item.Visiblity == true)
+            {
+                <article class="col-12 col-md-6 tm-post">
+                    <hr class="tm-hr-primary">
+                    <a href="@Url.Action("Details", "Home", new { id = item.BlogId })" class="effect-lily tm-post-link tm-pt-60">
+                        <div class="tm-post-link-inner">
+                            <img src="~/images/@item.Image" alt="Image" class="img-fluid">
+                        </div>
+                        @if (item.Date.Day == DateTime.Now.Day)
+                        {
+                            <span class="position-absolute tm-new-badge">New</span>
+                        }
+                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">@item.Headline</h2>
+                    </a>
+                    <p class="tm-pt-30">
+                        @{
+                            if (item.ContextText.Length > 120)
+                            {
+                                string metin = item.ContextText.Substring(0, 250);
+                                metin = metin + "...";
+                                <label>@metin</label>
+                            }
+                        }
+
+                    </p>
+                    <div class="d-flex justify-content-between tm-pt-45">
+                        <span class="tm-color-primary">@item.CategoryName</span>
+                        <span class="tm-color-primary">@item.Date.ToShortDateString()</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <span>yorum sayısı</span>
+                        <span>@item.Title_Name</span>
+                    </div>
+                </article>
+            }
+
+        }
+    </div>
+    <div class="row tm-row tm-mt-100 tm-mb-75">
+        <div class="tm-prev-next-wrapper">
+            @*<a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Prev</a>
+                <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next">Next</a>*@
+        </div>
+        <div class="tm-paging-wrapper">
+            <span class="d-inline-block mr-3">Page</span>
+            <nav class="tm-paging-nav d-inline-block">
+                @*<ul>
+                        <li class="tm-paging-item active">
+                            <a href="#" class="mb-2 tm-btn tm-paging-link">1</a>
+                        </li>
+                        <li class="tm-paging-item">
+                            <a href="#" class="mb-2 tm-btn tm-paging-link">2</a>
+                        </li>
+                        <li class="tm-paging-item">
+                            <a href="#" class="mb-2 tm-btn tm-paging-link">3</a>
+                        </li>
+                        <li class="tm-paging-item">
+                            <a href="#" class="mb-2 tm-btn tm-paging-link">4</a>
+                        </li>
+                    </ul>*@
+
+                @Html.PagedListPager((IPagedList)Model, p => Url.Action("Index", new { p }), new PagedListRenderOptions
+           {
+
+               LiElementClasses = new List<string> { "tm-paging-item" }
+           })
+            </nav>
+        </div>
+    </div>
+}
+

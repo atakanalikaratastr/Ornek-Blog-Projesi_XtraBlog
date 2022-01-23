@@ -1,0 +1,59 @@
+﻿@model IEnumerable<NTier.Entities.About>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AboutText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Background)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teamwork)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OurCoreValue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AboutText)
+        </td>
+        <td>
+            <img src="~/images/@item.Image" width="100" height="100" />
+            @*@Html.DisplayFor(modelItem => item.Image)*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Background)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Teamwork)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OurCoreValue)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AboutId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AboutId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AboutId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,5 @@
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Entities\bin\Debug\NTier.Entities.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Entities\bin\Debug\NTier.Entities.pdb
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Entities\obj\Debug\NTier.Entities.csproj.CoreCompileInputs.cache
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Entities\obj\Debug\NTier.Entities.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Entities\obj\Debug\NTier.Entities.pdb

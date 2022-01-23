@@ -1,0 +1,103 @@
+﻿@model NTier.Entities.Blog
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.CategoryId)*@
+            @ViewBag.CategoryName
+        </dd>
+        <dt>
+            @Html.DisplayName("Etiketler")
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.CategoryId)*@
+            @ViewBag.TagList
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Headline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Headline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentText)
+        </dd>
+
+        <dt>
+            @{
+                <img src="~/images/@Model.Image" width="100" height="100" />
+
+            }
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @{
+                bool visibilitiy = Model.Visiblity;
+                if (visibilitiy == true)
+                {
+                    @Html.Label("Evet");
+                }
+                else
+                {
+                    @Html.Label("Hayır");
+                }
+            }
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visiblity)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

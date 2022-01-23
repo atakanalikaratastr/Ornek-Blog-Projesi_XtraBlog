@@ -1,0 +1,85 @@
+﻿@model NTier.Entities.Blog
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Blogs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Blog</h4>
+        <hr />
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <input class="form-control" name="UserId" value="@Session["UserId"]" style="display:none" type="text">
+            <!--<div class="col-md-10">
+                    @*@Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })*@
+                <!--</div>-->
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(model => model.CategoryId, (List<SelectListItem>)ViewBag.CategoryList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Headline, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Headline, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Headline, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContentText, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ContentText, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ContentText, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Tags")
+            <div class="col-md-10">
+                @Html.Editor("tagsName")
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="file" onchange="$('#resim')[0].src = window.URL.createObjectURL(this.files[0])">
+                <img id="resim" alt="your image" width="100" height="100" />
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Visiblity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Visiblity)
+                    @Html.ValidationMessageFor(model => model.Visiblity, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

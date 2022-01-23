@@ -1,0 +1,124 @@
+﻿@model IEnumerable<NTier.Entities.BlogDetailDTO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TagsList)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Headline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContextText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visiblity)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @{
+                    List<string> tags = new List<string>();
+                    foreach (var item2 in item.TagsList)
+                    {
+                        tags.Add(item2.Name + ",");
+                    }
+                    string a = tags.LastOrDefault();
+                    tags.RemoveAt(tags.IndexOf(a));
+                    var lastTag = item.TagsList.LastOrDefault();
+                    tags.Add(lastTag.Name);
+                    string tagString = "";
+                    foreach (var item3 in tags.ToList())
+                    {
+                        tagString = tagString + item3;
+                    }
+                    @Html.Label(tagString);
+                }
+                @*@Html.DisplayFor(modelItem => item.TagsList)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Headline)
+            </td>
+            <td>
+                @{
+                    if (item.ContextText.Length > 120)
+                    {
+                        string metin = item.ContextText.Substring(0, 250);
+                        metin = metin + "...";
+                        <label>@metin</label>
+                    }
+                }
+                @*@Html.DisplayFor(modelItem => item.ContextText)*@
+            </td>
+            <td>
+                <img src="~/images/@item.Image" width="100" height="100" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @{
+                    bool visibilitiy = item.Visiblity;
+                    if (visibilitiy == true)
+                    {
+                        @Html.Label("Evet");
+                    }
+                    else
+                    {
+                        @Html.Label("Hayır");
+                    }
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BlogId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BlogId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BlogId })
+            </td>
+        </tr>
+    }
+
+</table>

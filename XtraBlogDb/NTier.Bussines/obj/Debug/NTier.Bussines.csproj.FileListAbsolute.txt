@@ -1,0 +1,17 @@
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\NTier.Bussines.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\NTier.Bussines.pdb
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\obj\Debug\NTier.Bussines.csproj.AssemblyReference.cache
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\obj\Debug\NTier.Bussines.csproj.CoreCompileInputs.cache
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\obj\Debug\NTier.Bussines.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\obj\Debug\NTier.Bussines.pdb
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\Core.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\NTier.DataAccess.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\NTier.Entities.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\EntityFramework.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\Core.pdb
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\Core.dll.config
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\NTier.DataAccess.pdb
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\NTier.DataAccess.dll.config
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\NTier.Entities.pdb
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\bin\Debug\EntityFramework.xml
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\NTier.Bussines\obj\Debug\NTier.Bussines.csproj.CopyComplete

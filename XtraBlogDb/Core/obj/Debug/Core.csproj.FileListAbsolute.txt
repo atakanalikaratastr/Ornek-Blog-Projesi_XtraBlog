@@ -1,0 +1,11 @@
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\bin\Debug\Core.dll.config
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\bin\Debug\Core.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\bin\Debug\Core.pdb
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\bin\Debug\EntityFramework.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\bin\Debug\EntityFramework.xml
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\obj\Debug\Core.csproj.CopyComplete
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\obj\Debug\Core.dll
+C:\Users\ATAKAN\Desktop\Projelerim\XtraBlogDb\Core\obj\Debug\Core.pdb
